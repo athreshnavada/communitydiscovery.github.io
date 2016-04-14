@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Integrating Network and Community Discovery by athreshnavada</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/athreshnavada">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Integrating Network and Community Discovery</h1>
+            <h2>Integrating Network and Community Discovery</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <div id="no-downloads">
+        <span class="inner">
+        </span>
+      </div>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h3>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h3>
+
+<p>The problem of community detection has recently been studied widely in the context of the web and social media networks. Most algorithms for community detection assume that the entire network is available for online analysis. In practice, this is not really true, because only restricted portions of the network may be available at any given time for analysis.</p>
+
+<h3>
+<a id="implementation" class="anchor" href="#implementation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implementation</h3>
+
+<p>We have used 2 modules mainly ChooseNode which chooses node in each iteration to be merged to the network and UpdateCommunity which will update the community or clusters from the choosen node
+I/P : initial set of clustering , Initial network, cost and budget
+O/P : final network and nodes with clusters formed from  nodes we have discovered</p>
+
+<p>ChooseNode Module:</p>
+
+<p>ChooseNode module takes current network, initial clustering, costs, budget as input and it computes the node which must be chosen for updating the community under that budget constraints.</p>
+
+<p>Computescore function can be implemented in 2 ways using 2 formulas Ncut Measure and Modularity</p>
+
+<p>Ncut Measure : minimize the similarity across a cut, while simultaneously maximizing the similarity within the same community.</p>
+
+<p>Modularity : additional fraction of the edges that fall within the given communities over the expected fraction, networks with high modularity have dense connections between the nodes within the same community and sparse connections between nodes in different communities.</p>
+
+<p>Using any of the measures we calculate the score and select the node i accordingly that is to be chosen and is given to that to update community and in current network.</p>
+
+<p>UpdateCommunity Module:</p>
+
+<p>UpdateCommunity function is executed during each iteration together with locality discovery process.
+The value θ ik · θ jk represents the expected number of edges of community k that lie between nodes i and j. And the exact number A ij is Poisson distributed around this expected value.</p>
+
+<h3>
+<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>Nikhil Daliya </p>
+
+<p>Athresh G</p>
+
+<h3>
+<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Research paper : On integrating Network and Community Discovery <a href="http://hanj.cs.illinois.edu/pdf/wsdm15_jliu.pdf">http://hanj.cs.illinois.edu/pdf/wsdm15_jliu.pdf</a> </p>
+
+<p><a href="mailto:athreshnavada@gmail.com">athreshnavada@gmail.com</a></p>
+
+<p><a href="mailto:nikhildaliya@gmail.com">nikhildaliya@gmail.com</a></p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>Projects by <a href="https://github.com/athreshnavada">athreshnavada</a> can be found on <a href="https://github.com/athreshnavada">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
